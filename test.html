@@ -1,0 +1,62 @@
+<html>
+	<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome to Tracking Test</title>
+    <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script type="text/javascript" async="" src="//tagmanager.google.com/debug"></script><script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-P8B97H5"></script><script>
+      dataLayer = [];
+    </script>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-P8B97H5');</script>
+    <!-- End Google Tag Manager -->
+    <style>
+      textarea{
+        width: 500px;
+        height: 300px;
+      }
+      button{
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+   <!-- Google Tag Manager (noscript) -->
+   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P8B97H5"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <form id="bform">
+      <textarea class="xtext xful" type="text" name="content"> 
+      </textarea>
+      <div class="request_btn ease03s">
+        <button class="h50 ha40" type="button">Submit1</button>
+      </div>
+      <button type="submit" onclick="return false">submit2</button>
+     </form>
+
+     <script>
+       
+       var keywords = ["heat pump","heating","cooling","pool","hot water","water heater","pompe à chaleur", "chauffage","refroidissement","piscine", "eau chaude", "chauffe-eau", "bomba de calor", "calefacción", "enfriamiento", "piscina", "agua caliente","calentador de agua", "pompa di calore","riscaldamento","raffreddamento","piscina", "acqua calda", "scaldabagno"];
+       dataLayer.push({'inquiry-status': 'invalid'}); // valid invalid
+      
+       function validateInquiry(str) {
+          return keywords.some(arrVal => str.indexOf(arrVal)!=-1);
+        }
+
+       document.querySelector('.bform .request_btn button').addEventListener('click', e => {
+         let bform_content = document.querySelector('.bform textarea[name=content]').value.trim();
+         
+         if(validateInquiry(bform_content)){
+          dataLayer.push({'inquiry-status': 'valid'});
+         }else{
+          dataLayer.push({'inquiry-status': 'invalid'});
+         }
+       });
+      
+     </script>
+  	</body>
+</html>
